@@ -84,12 +84,16 @@ def shopping(update: Update, context: CallbackContext) -> None:
             mess += str(i+1) + ". name: "+ list_products[i]['name'] + "\n" + "price: " + str(list_products[i]['price']) + "\n" + "link: " + list_products[i]['link'] + "\n" + "------\n" 
     update.message.reply_text(f'Các kết quả:\n {mess}')
 
-updater = Updater('5101674787:AAGILdSEXhdV7jmzwXBtvQ8B4w6T421EOvE') # your token here
+def main():
+    updater = Updater('5101674787:AAGILdSEXhdV7jmzwXBtvQ8B4w6T421EOvE') # REPLACE
 
-updater.dispatcher.add_handler(CommandHandler('hello', hello))
-updater.dispatcher.add_handler(CommandHandler('news', news))
-updater.dispatcher.add_handler(CommandHandler('shopping', shopping, pass_args=True)) # allow argument after command
+    updater.dispatcher.add_handler(CommandHandler('hello', hello))
+    updater.dispatcher.add_handler(CommandHandler('news', news))
+    updater.dispatcher.add_handler(CommandHandler('shopping', shopping, pass_args=True)) # allow argument after command
 
 
-updater.start_polling()
-updater.idle()
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
