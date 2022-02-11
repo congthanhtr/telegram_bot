@@ -85,7 +85,7 @@ def shopping(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f'Các kết quả:\n {mess}')
 
 def main():
-    updater = Updater('5101674787:AAGILdSEXhdV7jmzwXBtvQ8B4w6T421EOvE') # REPLACE
+    updater = Updater('#RPLACE YOUR TOKEN HERE')
 
     updater.dispatcher.add_handler(CommandHandler('hello', hello))
     updater.dispatcher.add_handler(CommandHandler('news', news))
